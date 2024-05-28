@@ -4,32 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <main>
+    <main class="questions-page">
         
         <!--Image that changes for each question - remember to change alt and link javascript to image-->
-        <img src="assets/images/altocumulus1_big.jpg" alt="description of cloud">
+        <img src="assets/images/altocumulus1_big.jpg" alt="description of cloud" class="image-question">
         
-        <!--Text in p will be the question specified in javascript-->
+        <!--Question text-->
         <div class="question-box">
             <p>What is this cloud called?</p>
         </div>
 
-        <!--multiple choice - put text in p elements with randomised options-->
+        <!--multiple choice - text in p elements with randomised options-->
+    <div class="options-container">
         <div class="answer-box" id="option1">
-            <p>Altocumulus</p>
+            <p class="options-text" onclick="randomAnsers()"></p>
         </div>
         <div class="answer-box" id="option2">
-            <p>Altostratus</p>
+            <p class="options-text" onclick="randomAnsers()"></p>
         </div>
         <div class="answer-box" id="option3">
-            <p>Cumulus</p>
+            <p class="options-text" onclick="randomAnswers()"></p>
         </div>
         <div class="answer-box" id="option4">
-            <p>Stratus</p>
+            <p class="options-text" onclick="randomAnswers()"></p>
         </div>
-    
+    </div>
+
+    <!--score and next button-->
+<div class="score-next-container">
+    <div class="score-tally">
+        <p id="score-tally" onclick="scoreTally()"></p>
+    </div>
+
+    <div class="next-button">
+        <button><p id="next-question"></p></button>
+    </div>
+</div> 
     </main>
 </body>
 </html>
