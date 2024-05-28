@@ -1,4 +1,10 @@
 /* homepage */
 body {
-    background-color: #eee
+    background-color: rgb(196, 196, 238);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
 }
