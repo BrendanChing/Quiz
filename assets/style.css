@@ -107,3 +107,6 @@ button:hover {
     background-color: #87ceeb;
 }
 
+#usernameForm {
+    padding-top: 10px;
+}
