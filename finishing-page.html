@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Document</title>
+    <style>
+        #gradient {
+          height: 100%;
+          background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(135, 206, 235,1));
+        }
+        </style>
+</head>
+<body id="gradient">
+    <div class="container">
+        <h1 id="title">WEATHER REPORT</h1>
+        <p id="leo">"its not about waiting for the thunderstorm too pass, it's about learning to dance in the rain" - Leo </p>
+    </div>
+
+    <div>
+
+        <!--<img src="assets/images/cloudRain.png" alt="alternatetext">-->
+<script>
+        var weather = document.getElementById('score');
+        if (score=="1,2"){imageElement.setAttribute('src', `assets/images/rain.png`);}
+        if (score=="3,4"){imageElement.setAttribute('src', `assets/images/darkCloud.png`);}
+        if (score=="5,6"){imageElement.setAttribute('src', `assets/images/whiteCloud`);}
+        if (score=="7,8"){imageElement.setAttribute('src', `assets/images/cloudRain`);}
+        if (score=="9,10"){imageElement.setAttribute('src', `assets/images/sun`);}
+</script>    
+   
+    </div>
+
+   <script id="feedback">
+    var result = document.getElementById('0');
+    var user = document.getElementById('username');
+    var score = document.getElementById(`0`);
+let results = `${result} ${user} you scored ${score} out of 10!';
+    </script>
+
+   
+    <a href = "/">
+   <button class="button" id="button">Try Again!</button>
+    </a>
+    
+</body>
+</html>
