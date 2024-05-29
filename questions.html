@@ -4,12 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <main>
+    <main class="questions-page">
+        
         <!--Image that changes for each question - remember to change alt and link javascript to image-->
-        <img src="" alt="description of cloud">
+        <img src="" alt="description of cloud" id="image-question">
+        
+        <!--Question text-->
+        <div class="question-box">
+            <p>What is this cloud called?</p>
+        </div>
 
+        <!--multiple choice - text in p elements with randomised options-->
+    <div class="options-container">
+        <div class="answer-box">
+            <p class="options-text" id="option0" onclick="checkAnswer0()"></p>
+        </div>
+        <div class="answer-box">
+            <p class="options-text" id="option1" onclick="checkAnswer1()"></p>
+        </div>
+        <div class="answer-box">
+            <p class="options-text" id="option2" onclick="checkAnswer2()"></p>
+        </div>
+        <div class="answer-box">
+            <p class="options-text"  id="option3" onclick="checkAnswer3()"></p>
+        </div>
+    </div>
+
+    <!--score and next button-->
+<div class="score-next-container">
+    <div class="score-tally">
+        <p id="score-tally" onclick="scoreTally()"></p>
+    </div>
+
+    <button class="next-button" id="next-question" onclick="questionCounter">
+    </button>
+</div> 
     </main>
+    <script src="javascript.js"></script>
 </body>
 </html>
+
