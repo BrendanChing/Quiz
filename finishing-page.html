@@ -17,10 +17,30 @@
         <h1 id="title">WEATHER REPORT</h1>
         <p id="leo">"its not about waiting for the thunderstorm too pass, it's about learning to dance in the rain" - Leo </p>
     </div>
+
     <div>
-        <img src="assets/images/cloudRain.png" alt="alternatetext">
-        <p id="feedback">$(message) $(userName) you scored $(score) out of 10!</p>
-        <button class="button button2">Try Again!</button>
+
+        <!--<img src="assets/images/cloudRain.png" alt="alternatetext">-->
+<script>
+        var weather = document.getElementById('score');
+        if (score=="1,2"){imageElement.setAttribute('src', `assets/images/rain.png`);}
+        if (score=="3,4"){imageElement.setAttribute('src', `assets/images/darkCloud.png`);}
+        if (score=="5,6"){imageElement.setAttribute('src', `assets/images/whiteCloud`);}
+        if (score=="7,8"){imageElement.setAttribute('src', `assets/images/cloudRain`);}
+        if (score=="9,10"){imageElement.setAttribute('src', `assets/images/sun`);}
+</script>    
+   
+    </div>
+
+   <script id="feedback">
+    const result = document.getElementById('');
+    const user = document.getElementById('username');
+    const score = document.getElementById(``);
+let results = `${result} ${user} you scored ${score} out of 10!';
+    </script>
+
+   <div>
+   <button class="button" id="button">Try Again!</button>
     </div>
 </body>
 </html>
