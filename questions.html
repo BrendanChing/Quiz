@@ -19,18 +19,17 @@
 
         <!--multiple choice - text in p elements with randomised options-->
     <div class="options-container">
-        <div class="answer-box">
-            <p class="options-text" id="option0" onclick="checkAnswer0()"></p>
-        </div>
-        <div class="answer-box">
-            <p class="options-text" id="option1" onclick="checkAnswer1()"></p>
-        </div>
-        <div class="answer-box">
-            <p class="options-text" id="option2" onclick="checkAnswer2()"></p>
-        </div>
-        <div class="answer-box">
-            <p class="options-text"  id="option3" onclick="checkAnswer3()"></p>
-        </div>
+        <button class="answer-box options-text" id="option0" onclick="checkAnswer0()">
+        </button>
+        
+        <button class="answer-box options-text" id="option1" onclick="checkAnswer1()">  
+        </button>
+        
+        <button class="answer-box options-text" id="option2" onclick="checkAnswer2()">  
+        </button>
+        
+        <button class="answer-box options-text" id="option3" onclick="checkAnswer3()">  
+        </button>
     </div>
 
     <!--score and next button-->
@@ -39,9 +38,11 @@
         <p id="score-tally" onclick="scoreTally()"></p>
     </div>
 
-    <button class="next-button" id="next-question" onclick="questionCounter">
+    <button class="next-button" id="next-question">
     </button>
 </div> 
+
+<div id="startQuiz"></div>
     </main>
     <script src="javascript.js"></script>
 </body>
