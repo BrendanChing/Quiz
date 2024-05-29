@@ -10,7 +10,7 @@
     <main class="questions-page">
         
         <!--Image that changes for each question - remember to change alt and link javascript to image-->
-        <img src="assets/images/altocumulus1_big.jpg" alt="description of cloud" class="image-question">
+        <img src="" alt="description of cloud" id="image-question">
         
         <!--Question text-->
         <div class="question-box">
@@ -19,17 +19,17 @@
 
         <!--multiple choice - text in p elements with randomised options-->
     <div class="options-container">
-        <div class="answer-box" id="option1">
-            <p class="options-text" onclick="randomAnsers()"></p>
+        <div class="answer-box">
+            <p class="options-text" id="option0" onclick="checkAnswer0()"></p>
         </div>
-        <div class="answer-box" id="option2">
-            <p class="options-text" onclick="randomAnsers()"></p>
+        <div class="answer-box">
+            <p class="options-text" id="option1" onclick="checkAnswer1()"></p>
         </div>
-        <div class="answer-box" id="option3">
-            <p class="options-text" onclick="randomAnswers()"></p>
+        <div class="answer-box">
+            <p class="options-text" id="option2" onclick="checkAnswer2()"></p>
         </div>
-        <div class="answer-box" id="option4">
-            <p class="options-text" onclick="randomAnswers()"></p>
+        <div class="answer-box">
+            <p class="options-text"  id="option3" onclick="checkAnswer3()"></p>
         </div>
     </div>
 
@@ -39,10 +39,10 @@
         <p id="score-tally" onclick="scoreTally()"></p>
     </div>
 
-    <div class="next-button">
-        <button><p id="next-question"></p></button>
-    </div>
+    <button class="next-button" id="next-question" onclick="questionCounter">
+    </button>
 </div> 
     </main>
 </body>
 </html>
+

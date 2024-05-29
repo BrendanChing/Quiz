@@ -7,7 +7,7 @@
     height: 100%;
 }
 
-.image-question {
+#image-question {
     align-self: center;
     width: 50%;
     height: 30%;
@@ -43,5 +43,9 @@
     height: 7vh;
     border: solid black;
     margin-top: 4px;
+}
+
+.next-button {
+    align-self: center;
 }
 
