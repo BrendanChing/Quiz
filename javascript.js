@@ -38,7 +38,7 @@ questionImages[random_cloud];
     console.log("current cloud is "+ random_cloud);
     console.log("answers: "+ answers);
 
-    //update answer sections. (This could be done with a for loop, butas we always want four answers, this is fine
+    //update answer sections. (This could be done with a for loop, but as we always want four answers, this is fine
     document.getElementById("option0").innerHTML = answers[0];
     document.getElementById("option1").innerHTML = answers[1];
     document.getElementById("option2").innerHTML = answers[2];
@@ -95,3 +95,27 @@ function generateAnswersArray(correct_answer, number_of_answers) {
     }
     return answer_array
 }
+
+function gotoFinish() {
+    window.location.href = 'finishing-page.html';
+}
+
+let clickCount = 0;
+
+function handleClick() {
+    clickCount++;
+    if (clickCount >= 9) {
+        gotoFinish();
+    } else {
+        for (let j = 0; j < arrayofFunctions.length; j++) {
+            arrayofFunctions[j]();
+        }
+    }
+}
+
+document.getElementById("option0").addEventListener('click', handleClick);
+document.getElementById("option1").addEventListener('click', handleClick);
+document.getElementById("option2").addEventListener('click', handleClick);
+document.getElementById("option3").addEventListener('click', handleClick);
+
+let arrayofFunctions = [runQuestionsPage, getRandomCloud, generateAnswersArray];

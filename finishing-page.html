@@ -22,12 +22,12 @@
 
         <!--<img src="assets/images/cloudRain.png" alt="alternatetext">-->
 <script>
-        var weather = document.getElementById('score');
-        if (score=="1,2"){imageElement.setAttribute('src', `assets/images/rain.png`);}
-        if (score=="3,4"){imageElement.setAttribute('src', `assets/images/darkCloud.png`);}
-        if (score=="5,6"){imageElement.setAttribute('src', `assets/images/whiteCloud`);}
-        if (score=="7,8"){imageElement.setAttribute('src', `assets/images/cloudRain`);}
-        if (score=="9,10"){imageElement.setAttribute('src', `assets/images/sun`);}
+    let score = Math.floor(Math.random()*10);
+        if (score=="1,2"){imageElement.setAttribute('src', `assets/images/rain.png`);} else
+        if (score=="3,4"){imageElement.setAttribute('src', `assets/images/darkCloud.png`);}else
+        if (score=="5,6"){imageElement.setAttribute('src', `assets/images/whiteCloud`);}else
+        if (score=="7,8"){imageElement.setAttribute('src', `assets/images/cloudRain`);}else
+        (score=="9,10"){imageElement.setAttribute('src', `assets/images/sun`);}
 </script>    
    
     </div>
