@@ -18,25 +18,33 @@
         <p id="leo">"its not about waiting for the thunderstorm too pass, it's about learning to dance in the rain" - Leo </p>
     </div>
 
-    <div>
+    <div id="score-message">
+    </div>
+
 
         <!--<img src="assets/images/cloudRain.png" alt="alternatetext">-->
 <script>
     let score = Math.floor(Math.random()*10);
-        if (score=="1,2"){imageElement.setAttribute('src', `assets/images/rain.png`);} else
-        if (score=="3,4"){imageElement.setAttribute('src', `assets/images/darkCloud.png`);}else
-        if (score=="5,6"){imageElement.setAttribute('src', `assets/images/whiteCloud`);}else
-        if (score=="7,8"){imageElement.setAttribute('src', `assets/images/cloudRain`);}else
-        (score=="9,10"){imageElement.setAttribute('src', `assets/images/sun`);}
+        if (score === 1 || score === 2 ){
+            scoreMessage = 
+            imageElement.setAttribute('src', 'assets/images/rain.png');
+        } else if (score === 3 || score === 4 ){
+            imageElement.setAttribute('src', 'assets/images/darkCloud.png');
+        }else if (score === 5 || score === 6 ){
+                imageElement.setAttribute('src', 'assets/images/whiteCloud');
+        }else if (score === 7 || score === 8 ){
+                imageElement.setAttribute('src', 'assets/images/cloudRain');
+        }else if(score === 9 || score === 10 ){
+            imageElement.setAttribute('src', 'assets/images/sun');
+            };
 </script>    
    
-    </div>
 
    <script id="feedback">
-    var result = document.getElementById('0');
-    var user = document.getElementById('username');
-    var score = document.getElementById(`0`);
-let results = `${result} ${user} you scored ${score} out of 10!';
+    var username = document.getElementById('username');
+    
+    let results = `${scoreMessage} ${username}! You scored ${score} out of 10!`;
+    document.getElementById('score-message').innerText = results;
     </script>
 
    

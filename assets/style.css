@@ -65,6 +65,12 @@
     height: 100vh; /* Optional: centers vertically within the viewport */
   }
 
+  #score-message {
+    font-style: italic;
+    font-size: 25px;
+  font-weight: bold;
+  color: #ecf0f1;
+  }
 
 
 
