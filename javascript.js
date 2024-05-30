@@ -123,6 +123,8 @@ function generateAnswersArray(correct_answer, number_of_answers) {
 
 function gotoFinish() {
     window.location.href = 'finishing-page.html';
+
+    localStorage.setItem('user_score', user_score);
 }
 
 
@@ -146,7 +148,7 @@ function checkAnswer(user_choice, correct_answer) {
         console.log("user score: " + user_score);
     } else {
         alert("GO BACK TO CLOUD SCHOOL");
-        
+
     }
 }
 

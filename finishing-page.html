@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
-    <title>Document</title>
-    <style>
-        #gradient {
-          height: 100%;
-          background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(135, 206, 235,1));
-        }
-        </style>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="assets/style.css">
+     <title>Document</title>
+     <style>
+         #gradient {
+           height: 100%;
+           background-image: linear-gradient(to top, rgba(255,0,0,0),
+rgba(135, 206, 235,1));
+         }
+         </style>
 </head>
 <body id="gradient">
-    <div class="container">
-        <h1 id="title">WEATHER REPORT</h1>
-        <p id="leo">"its not about waiting for the thunderstorm too pass, it's about learning to dance in the rain" - Leo </p>
-    </div>
+     <div class="container">
+         <h1 id="title">WEATHER REPORT</h1>
+         <p id="leo">"its not about waiting for the thunderstorm to
+pass, it's about learning to dance in the rain" - Leo </p>
+     </div>
 
-    <div id="score-message">
-    </div>
+     <div id="score-message">
+         <p> Congratulations your score is <span id="score-text"></span>/10!<span id="score-emoji"></span></p>
+     </div>
+     <script>
+         document.addEventListener("DOMContentLoaded", function () {
+             const userScore = localStorage.getItem('user_score');
 
+             document.getElementById('score-text').textContent = userScore;
 
-        <!--<img src="assets/images/cloudRain.png" alt="alternatetext">-->
-<script>
-    let score = Math.floor(Math.random()*10);
-        if (score === 1 || score === 2 ){
-            scoreMessage = 
-            imageElement.setAttribute('src', 'assets/images/rain.png');
-        } else if (score === 3 || score === 4 ){
-            imageElement.setAttribute('src', 'assets/images/darkCloud.png');
-        }else if (score === 5 || score === 6 ){
-                imageElement.setAttribute('src', 'assets/images/whiteCloud');
-        }else if (score === 7 || score === 8 ){
-                imageElement.setAttribute('src', 'assets/images/cloudRain');
-        }else if(score === 9 || score === 10 ){
-            imageElement.setAttribute('src', 'assets/images/sun');
-            };
-</script>    
-   
+             const scoreEmoji = document.getElementById('score-emoji');
+             let emoji;
+             if (userScore === 0) {
+                emoji = '💩';
+             } else if (userScore <= 2) {
+                 emoji = '🌧️';
+             } else if (userScore <= 4) {
+                 emoji = '☁️';
+             } else if (userScore <= 6) {
+                 emoji = '⛅';
+             } else if (userScore <= 8) {
+                 emoji = '🌦️';
+             } else if (userScore <= 10) {
+                 emoji = '🌞';
+             }
+             scoreEmoji.textContent = emoji;
 
-   <script id="feedback">
-    var username = document.getElementById('username');
-    
-    let results = `${scoreMessage} ${username}! You scored ${score} out of 10!`;
-    document.getElementById('score-message').innerText = results;
-    </script>
+         });
+     </script>
 
-   
-    <a href = "/">
-   <button class="button" id="button">Try Again!</button>
-    </a>
-    
+     <a href = "/">
+        <button class="button" id="button">Try again!</button>
+     </a>
 </body>
 </html>
