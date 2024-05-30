@@ -241,4 +241,20 @@ button:hover {
     border: solid black;
 }
 
-.next-button {}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.box{
+    width: 150px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #87ceeb;
+}
+
