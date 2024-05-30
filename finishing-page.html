@@ -22,6 +22,8 @@
     <div>
 
         <img src="assets/images/cloudRain.png" alt="alternatetext">
+
+        <div id="weather3"></div>
 <script>
   function weather() {
         let weather1 = document.getElementById('score');
@@ -71,6 +73,7 @@
     let user = document.getElementById('username');
     let score = document.getElementById(`userScore`);
 let results = (`Well done ${user} you scored ${score} out of 10!`);
+document.getElementById("weather3").innerText=results;
     }
     </script>
 
