@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     const page = document.body.getAttribute('data-page');
-    alert(`Hello your page is ${page}`)
+    
 
     if (page === 'index') {
         console.log(`This is Page 1: ${page}`);
         // Prevent form from submitting normally
-        document.getElementById('usernameForm').addEventListener('submit', function(event) {
+document.getElementById('usernameForm').addEventListener('submit',
+function(event) {
             event.preventDefault();
 
 
@@ -16,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.setItem('username',username);
 
             // Display a greeting message with the username..
-            // document.getElementById('greeting').innerText = 'Hello,${username}! Let's start the quiz.';});
+            // document.getElementById('greeting').innerText ='Hello,${username}! Let's start the quiz.';});
 
             // Redirect to questions page
             window.location.href = 'questions.html';
@@ -24,26 +25,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     else if (page === 'questions') {
         runQuestionsPage()
-        console.log('This is Page 2');
     }
 });
-
-function runQuestionsPage() {
-    document.getElementById("option0").innerHTML = "Hello Sian!";
-    let random_cloud = getRandomCloud()
-    console.log("random cloud: "+  random_cloud);
-    document.getElementById("image-question").src =
-questionImages[random_cloud];
-    let answers = generateAnswersArray(random_cloud, 4);
-    console.log("current cloud is "+ random_cloud);
-    console.log("answers: "+ answers);
-
-    //update answer sections. (This could be done with a for loop, but as we always want four answers, this is fine
-    document.getElementById("option0").innerHTML = answers[0];
-    document.getElementById("option1").innerHTML = answers[1];
-    document.getElementById("option2").innerHTML = answers[2];
-    document.getElementById("option3").innerHTML = answers[3];
-}
 
 let questionImages = {
   Cirrus: "assets/images/cirrus6_big.jpg",
@@ -60,6 +43,48 @@ let questionImages = {
 
 let optionsArray = ["option0", "option1", "option2", "option3"];
 
+function runQuestionsPage() {
+    //update score
+    document.getElementById("score").innerHTML = user_score;
+    let random_cloud = getRandomCloud()
+    console.log("random cloud: "+  random_cloud);
+    document.getElementById("image-question").src = questionImages[random_cloud];
+
+    let answers = generateAnswersArray(random_cloud, 4);
+
+    console.log("current cloud is "+ random_cloud);
+    console.log("answers: "+ answers);
+
+    //fill out answer sections. (This could be done with a for loop, but as we always want four answers, this is fine
+    document.getElementById("option0").innerHTML = answers[0];
+    document.getElementById("option1").innerHTML = answers[1];
+    document.getElementById("option2").innerHTML = answers[2];
+    document.getElementById("option3").innerHTML = answers[3];
+
+    //Ensure that we're not using previous answers
+    removeEventListeners();
+
+    //answer checking logic
+    document.getElementById("option0").addEventListener('click',
+function () {
+    handleClick( answers[0], random_cloud);
+    });
+    document.getElementById("option1").addEventListener('click',
+function () {
+    handleClick( answers[1], random_cloud);
+    });
+    document.getElementById("option2").addEventListener('click',
+function () {
+    handleClick( answers[2], random_cloud);
+    });
+    document.getElementById("option3").addEventListener('click',
+function () {
+    handleClick( answers[3], random_cloud);
+    });
+}
+
+
+
 function getRandomCloud(){
     let cloud_types = Object.keys(questionImages);
     console.log(cloud_types);
@@ -74,7 +99,7 @@ function generateAnswersArray(correct_answer, number_of_answers) {
     copied_questionImages = {...questionImages};
     console.log("copied_questions array: "+copied_questionImages);
     delete copied_questionImages[correct_answer];
-    console.log("copied_questions array minus correct answer" +copied_questionImages);
+    console.log("copied_questions array minus correct answer"+copied_questionImages);
     let cloud_types = Object.keys(copied_questionImages);
     console.log("cloud_types array:" + cloud_types);
     for (i=0; i < number_of_answers -1; i++) {
@@ -100,22 +125,39 @@ function gotoFinish() {
     window.location.href = 'finishing-page.html';
 }
 
-let clickCount = 0;
 
-function handleClick() {
+let clickCount = 0;
+let user_score = 0;
+
+function removeEventListeners() {
+    let options = ["option0", "option1", "option2", "option3"];
+    options.forEach(option => {
+        let element = document.getElementById(option);
+        let newElement = element.cloneNode(true);
+        element.parentNode.replaceChild(newElement, element);
+    });
+}
+
+function checkAnswer(user_choice, correct_answer) {
+    console.log("This checkAnswer function has been called");
+    if (user_choice === correct_answer) {
+        alert("congratulations!!");
+        user_score ++;
+        console.log("user score: " + user_score);
+    } else {
+        alert("GO BACK TO CLOUD SCHOOL");
+        
+    }
+}
+
+function handleClick(user_choice, correct_answer) {
+    console.log("user choice is : " + user_choice);
+    console.log("correct answer is : " + correct_answer);
+    checkAnswer(user_choice, correct_answer);
     clickCount++;
     if (clickCount >= 9) {
         gotoFinish();
     } else {
-        for (let j = 0; j < arrayofFunctions.length; j++) {
-            arrayofFunctions[j]();
-        }
+        runQuestionsPage();
     }
 }
-
-document.getElementById("option0").addEventListener('click', handleClick);
-document.getElementById("option1").addEventListener('click', handleClick);
-document.getElementById("option2").addEventListener('click', handleClick);
-document.getElementById("option3").addEventListener('click', handleClick);
-
-let arrayofFunctions = [runQuestionsPage, getRandomCloud, generateAnswersArray];
