@@ -23,21 +23,53 @@
 
         <!--<img src="assets/images/cloudRain.png" alt="alternatetext">-->
 <script>
-        var weather = document.getElementById('score');
-        if (score=="1,2"){imageElement.setAttribute('src', `assets/images/rain.png`);}
-        if (score=="3,4"){imageElement.setAttribute('src', `assets/images/darkCloud.png`);}
-        if (score=="5,6"){imageElement.setAttribute('src', `assets/images/whiteCloud`);}
-        if (score=="7,8"){imageElement.setAttribute('src', `assets/images/cloudRain`);}
-        if (score=="9,10"){imageElement.setAttribute('src', `assets/images/sun`);}
+  function weather() {
+        let weather1 = document.getElementById('score');
+        if (weather1===1,2)
+        {function insert(){
+            var img = document.createElement("img");
+            img.src = "assets/images/rain";
+            appendChild(img);
+        };}
+
+        else if (weather1===3,4)
+        {function insert(){
+            var img = document.createElement("img");
+            img.src = "assets/images/darkCloud";
+            appendChild(img);
+        };}
+
+        else if (weather1===5,6)
+        {function insert(){
+            var img = document.createElement("img");
+            img.src = "assets/images/cloudRain";
+            appendChild(img);
+        };}
+
+        else if (weather1===7,8)
+        {function insert(){
+            var img = document.createElement("img");
+            img.src = "assets/images/whiteCloud";
+            appendChild(img);
+        };}
+
+        else if (weather1===9,10)
+        {function insert(){
+            var img = document.createElement("img");
+            img.src = "assets/images/sun";
+            appendChild(img);
+        };}
+
+  }
+  weather();
 </script>    
    
     </div>
 
    <script id="feedback">
-    var result = document.getElementById('0');
-    var user = document.getElementById('username');
-    var score = document.getElementById(`0`);
-let results = `${result} ${user} you scored ${score} out of 10!';
+    let user = document.getElementById('username');
+    let score = document.getElementById(`userScore`);
+let results = (`Well done ${user} you scored ${score} out of 10!`);
     </script>
 
    
